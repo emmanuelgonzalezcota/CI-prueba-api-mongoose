@@ -19,9 +19,9 @@ jobs:
     - name: Build image Docker
       # Nombre el paso en el que estoy
     
-    #- run: docker build . --file Dockerfile --tag api-mongoose-v1
+    # run: docker build . --file Dockerfile --tag api-mongoose-v1
       # ejecuta un comando especifico
-    - run: npm install # esto por que no tenemos el Docker aun yo Emma
+      run: npm install # esto por que no tenemos el Docker aun yo Emma
 
   # Test
   test:
@@ -30,8 +30,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Tests API
-    - uses: actions/setup-node@v1
-    - with:
-      node-version: '12.x'
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
     - run: npm ci
     - run: npm test
