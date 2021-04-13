@@ -51,7 +51,8 @@ app.patch('/users/:id',UserController.update);
 
 app.delete('/users/:id',UserController.remove);
 
-app.listen(3000,() =>{ 
+const port = process.env.PORT || 3000; // aqui habilitamos lo que heroku nos de para el puerto, default sera nuestro 3000
+app.listen(port,() =>{ 
   console.log("Server ready !!!");
 })
 
