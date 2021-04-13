@@ -27,6 +27,10 @@ db.once('open', function(){ // Esto se va a ejecutar una vez, y esa vez es solo 
   console.log('Connected to database');
 })
 
+app.get('/',(req,res) =>{
+  return res.send('Bienvenidos a la api de mongoose');
+})
+
 // app.get('/users',(req,res) => {
 //   Users.find({}).then((result) => {
 //     res.status(200).send(result)
